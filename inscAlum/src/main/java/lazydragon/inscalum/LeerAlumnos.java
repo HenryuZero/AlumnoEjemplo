@@ -20,7 +20,7 @@ public class LeerAlumnos {
         count = in.nextInt();
         ban=true;
         }catch(InputMismatchException e){
-                 System.out.println("Valor no valido"); in.nextLine(); }
+                 System.out.println("Valor no valido");ban=false; in.nextLine(); }
         }while(ban==false);
         in.nextLine();
         
@@ -57,7 +57,7 @@ public class LeerAlumnos {
                 default: System.out.println("Edad no permitida"); break;
              }
              }catch(InputMismatchException e){
-                 System.out.println("Valor no valido"); in.nextLine(); }
+                 System.out.println("Valor no valido"); ban=false; in.nextLine(); }
             }while(ban==false);
             
             do{
