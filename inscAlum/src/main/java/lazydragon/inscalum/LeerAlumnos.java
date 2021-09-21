@@ -12,9 +12,17 @@ public class LeerAlumnos {
         alumDTO stud;
         ArrayList<alumDTO> studs = new ArrayList<>();
         Scanner in = new Scanner(System.in);
+        int count=0;
+        
+        do{
+        try{
         System.out.println("Ingrese el numero de alumnos que inscribira: ");
-        int count = in.nextInt();
-        String text =in.nextLine();
+        count = in.nextInt();
+        ban=true;
+        }catch(InputMismatchException e){
+                 System.out.println("Valor no valido"); in.nextLine(); }
+        }while(ban==false);
+        in.nextLine();
         
         for (int i=0;i<count;i++){
             stud = new alumDTO();
@@ -96,8 +104,9 @@ public class LeerAlumnos {
             studs.add(stud);
         }
         studs.forEach(studenDTO -> {
-            //System.out.println(studenDTO);
             System.out.println("===============================");
+            System.out.println(studenDTO);
+            /*System.out.println("===============================");
             System.out.println("Nombre: "+ studenDTO.getName());
             System.out.println("Sexo: "+ studenDTO.getSex());
             System.out.println("Edad: "+ studenDTO.getEdad());
@@ -106,7 +115,7 @@ public class LeerAlumnos {
             System.out.println("Promedio: "+ studenDTO.getProm());
             System.out.println("Curso: "+ studenDTO.getCurs());
             System.out.println("Salon: "+ studenDTO.getCroom());
-            System.out.println("Estado: "+ studenDTO.getStatus());
+            System.out.println("Estado: "+ studenDTO.getStatus());*/
             
             System.out.println("===============================");
         });
