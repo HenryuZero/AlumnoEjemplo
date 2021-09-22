@@ -1,14 +1,20 @@
 package lazydragon.inscalum;
 
 import alumDTO.alumDTO;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
 public class LeerAlumnos {
-    public static void main (String[] args){
+    public static void main (String[] args) throws ParseException{
         boolean ban=false;
+        SimpleDateFormat formato = new SimpleDateFormat("dd-mm-yyyy"); 
+        Date fechaIni = formato.parse("01-01-2010");
+        Date fechaFin = formato.parse("31-12-2015");
         alumDTO stud;
         ArrayList<alumDTO> studs = new ArrayList<>();
         Scanner in = new Scanner(System.in);
@@ -68,7 +74,13 @@ public class LeerAlumnos {
             do{
             System.out.println("Fecha de Nacimiento (DD-MM-AAAA): ");
             stud.setbDate(in.nextLine());
-            }while(!validarFecha(stud.getbDate()));
+            Date fechaComp = formato.parse(stud.getbDate());
+            if (fechaComp.after(fechaFin) || fechaComp.before(fechaIni)){
+                System.out.println("Fecha fuera del rango"); ban=false;
+            }
+            else
+            {ban=true;}
+            }while(!validarFecha(stud.getbDate()) || ban==false);
             
             do{
                 try{
