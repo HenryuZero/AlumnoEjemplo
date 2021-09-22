@@ -85,7 +85,7 @@ public class alumDTO {
 
     @Override
     public String toString() {
-        return "\n Nombre=" + name + "\n Sexo=" + sex + "\n Edad=" + edad + "\n Ciudad=" + city + "\n FechaNacimiento=" + bDate + "\n Promedio=" + prom + "\n Curso=" + curs + "\n Salon=" + croom + "\n Estado=" + Status ;
+        return "\n Nombre= " + name + "\n Sexo= " + sex + "\n Edad= " + edad + "\n Ciudad= " + city + "\n FechaNacimiento= " + bDate + "\n Promedio= " + prom + "\n Curso= " + curs + "\n Salon= " + croom + "\n Estado= " + Status ;
     }
     
 }
