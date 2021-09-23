@@ -45,7 +45,7 @@ public class LeerAlumnos {
                  System.out.println("Valor no valido"); in.nextLine(); }
         finally{
             //System.out.println(count);
-            if (count==0){
+            if (count<=0){
              ingreso();
             }
         } 
