@@ -1,6 +1,6 @@
 package lazydragon.inscalum;
 
-import alumDTO.alumDTO;
+import alumDTO.AlumnoDTO;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.Period;
@@ -11,18 +11,18 @@ import java.util.Scanner;
 
 
 public class LeerAlumnos {
-    static alumDTO Student;
+    static AlumnoDTO Student;
     static Scanner in = new Scanner(System.in);
     static int count=0;
     public static void main (String[] args) throws ParseException{
         
-        ArrayList<alumDTO> Students = new ArrayList<>();
+        ArrayList<AlumnoDTO> students = new ArrayList<>();
                
         ingreso();
         in.nextLine();
         
         for (int i=0;i<count;i++){
-            Student = new alumDTO();
+            Student = new AlumnoDTO();
             
             setNombre();
             setSexo();            
@@ -31,9 +31,9 @@ public class LeerAlumnos {
             setPromedio();
                         
             in.nextLine();
-            Students.add(Student);
+            students.add(Student);
         }
-        printStudents(Students);
+        printStudents(students);
         
     }
    
@@ -134,7 +134,7 @@ public class LeerAlumnos {
      }
     }
 
-    public static void printStudents(ArrayList<alumDTO> Students){
+    public static void printStudents(ArrayList<AlumnoDTO> Students){
         Students.forEach(studenDTO -> {
             System.out.println("===============================");
             System.out.println(studenDTO);          
